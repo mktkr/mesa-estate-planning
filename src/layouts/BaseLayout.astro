@@ -1,0 +1,256 @@
+---
+import SEOHead from '../components/SEOHead.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+  schema?: object;
+  keywords?: string;
+}
+
+const props = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <SEOHead {...props} />
+  <style is:global>
+    /* ═══ All global styles from the mobile-first design go here ═══ */
+    /* This will contain the full CSS from our current index.html */
+    /* Importing from external file for maintainability */
+  </style>
+  <link rel="stylesheet" href="/styles/global.css" />
+</head>
+<body>
+
+  <!-- TOP BAR (desktop) -->
+  <div class="top-bar">
+    <div class="top-bar-left">Mesa, Arizona Estate Planning Attorney &middot; Serving East Valley & Beyond</div>
+    <div class="top-bar-right">
+      <a href="#">State Bar of Arizona</a>
+      <a href="#">East Valley Estate Planning Council</a>
+      <a href="#contact" class="top-bar-phone">(480) 000-0000</a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-name">Mesa Estate Planning</span>
+        <span class="nav-logo-sub">Attorney at Law &middot; Mesa, AZ</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="/services" class="nav-link">Services <span class="nav-arrow">&#9662;</span></a>
+          <div class="mega-menu" style="min-width:680px;">
+            <div class="mega-inner">
+              <div class="mega-cols mega-cols-2">
+                <div class="mega-col">
+                  <div class="mega-col-head">Trusts &amp; Estates</div>
+                  <a href="/services/wills-and-trusts" class="mega-link"><span class="mega-link-name">Wills &amp; Trusts</span><span class="mega-link-desc">Revocable trusts, wills, and probate avoidance</span></a>
+                  <a href="/services/powers-of-attorney" class="mega-link"><span class="mega-link-name">Powers of Attorney</span><span class="mega-link-desc">Financial and healthcare directives</span></a>
+                  <a href="/services/asset-protection" class="mega-link"><span class="mega-link-name">Asset Protection</span><span class="mega-link-desc">LLCs and trusts to shield wealth</span></a>
+                  <a href="/services/estate-tax-planning" class="mega-link"><span class="mega-link-name">Estate Tax Planning</span><span class="mega-link-desc">Gifting strategies and dynasty trusts</span></a>
+                  <a href="/services/charitable-planning" class="mega-link"><span class="mega-link-name">Charitable Planning</span><span class="mega-link-desc">CRTs, CLTs, and donor-advised funds</span></a>
+                </div>
+                <div class="mega-col">
+                  <div class="mega-col-head">Business &amp; Tax</div>
+                  <a href="/services/business-succession" class="mega-link"><span class="mega-link-name">Business Succession</span><span class="mega-link-desc">Buy-sell agreements and transition planning</span></a>
+                  <a href="/services/business-formation" class="mega-link"><span class="mega-link-name">Business Formation</span><span class="mega-link-desc">LLCs, S-corps, and entity structuring</span></a>
+                  <a href="/services/qsbs-tax-planning" class="mega-link"><span class="mega-link-name">QSBS Tax Planning</span><span class="mega-link-desc">Qualified small business stock strategies</span></a>
+                  <a href="/services/commercial-lease-review" class="mega-link"><span class="mega-link-name">Commercial Lease Review</span><span class="mega-link-desc">Protect your business in lease negotiations</span></a>
+                </div>
+              </div>
+              <div class="mega-cta-strip">
+                <span class="mega-cta-text">Not sure what you need? Start with a free 30-minute consultation.</span>
+                <a href="/contact" class="mega-cta-btn">Book Free Consultation</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Who We Serve <span class="nav-arrow">&#9662;</span></a>
+          <div class="simple-menu">
+            <a href="/families" class="simple-link">Families &amp; Parents</a>
+            <a href="/business-owners" class="simple-link">Business Owners</a>
+            <a href="/high-net-worth" class="simple-link">High-Net-Worth Individuals</a>
+            <a href="/professionals" class="simple-link">For Professionals (Referrals)</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="/blog" class="nav-link">Resources <span class="nav-arrow">&#9662;</span></a>
+          <div class="mega-menu" style="min-width:620px;">
+            <div class="mega-inner">
+              <div class="mega-cols mega-cols-3">
+                <div class="mega-col">
+                  <div class="mega-col-head">Learn</div>
+                  <a href="/blog" class="mega-link"><span class="mega-link-name">Articles &amp; Guides</span><span class="mega-link-desc">Plain-English education</span></a>
+                  <a href="/blog?filter=case-studies" class="mega-link"><span class="mega-link-name">Case Studies</span><span class="mega-link-desc">Real scenarios, explained</span></a>
+                </div>
+                <div class="mega-col">
+                  <div class="mega-col-head">Tools</div>
+                  <a href="/tools/estate-plan-checklist" class="mega-link"><span class="mega-link-name">Estate Plan Checklist</span><span class="mega-link-desc">Find out what you need</span></a>
+                  <a href="/tools/trust-vs-will-quiz" class="mega-link"><span class="mega-link-name">Trust vs. Will Quiz</span><span class="mega-link-desc">2-minute interactive tool</span></a>
+                </div>
+                <div class="mega-col">
+                  <div class="mega-col-head">Downloads</div>
+                  <a href="/downloads/arizona-probate-guide" class="mega-link"><span class="mega-link-name">Arizona Probate Guide</span><span class="mega-link-desc">Free PDF</span></a>
+                  <a href="/downloads/business-succession-checklist" class="mega-link"><span class="mega-link-name">Business Succession Checklist</span><span class="mega-link-desc">For owners planning a transition</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="/about" class="nav-link">About <span class="nav-arrow">&#9662;</span></a>
+          <div class="simple-menu">
+            <a href="/about/mckay-tucker" class="simple-link">J. McKay Tucker, Esq.</a>
+            <a href="/about/jay-allen" class="simple-link">Jay Allen, Esq. (Of Counsel)</a>
+            <a href="/about#process" class="simple-link">Our Process</a>
+            <a href="/contact" class="simple-link">Our Office — Mesa, AZ</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="/contact" class="nav-link nav-cta-desktop">Free Consultation</a>
+        </li>
+      </ul>
+
+      <div style="display:flex;align-items:center;gap:4px;">
+        <a href="/contact" class="nav-cta-mobile">Consult</a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-section-label">Services</div>
+    <a href="/services/wills-and-trusts" class="drawer-link">Wills &amp; Trusts <span class="drawer-link-arrow">&#8250;</span></a>
+    <a href="/services/powers-of-attorney" class="drawer-link">Powers of Attorney <span class="drawer-link-arrow">&#8250;</span></a>
+    <a href="/services/asset-protection" class="drawer-link">Asset Protection <span class="drawer-link-arrow">&#8250;</span></a>
+    <a href="/services/estate-tax-planning" class="drawer-link">Estate Tax Planning <span class="drawer-link-arrow">&#8250;</span></a>
+    <a href="/services/charitable-planning" class="drawer-link">Charitable Planning <span class="drawer-link-arrow">&#8250;</span></a>
+    <a href="/services/business-succession" class="drawer-link">Business Succession <span class="drawer-link-arrow">&#8250;</span></a>
+    <a href="/services/business-formation" class="drawer-link">Business Formation <span class="drawer-link-arrow">&#8250;</span></a>
+    <a href="/services/qsbs-tax-planning" class="drawer-link">QSBS Planning <span class="drawer-link-arrow">&#8250;</span></a>
+    <div class="drawer-section-label">Who We Serve</div>
+    <a href="/families" class="drawer-link">Families &amp; Parents <span class="drawer-link-arrow">&#8250;</span></a>
+    <a href="/business-owners" class="drawer-link">Business Owners <span class="drawer-link-arrow">&#8250;</span></a>
+    <a href="/high-net-worth" class="drawer-link">High-Net-Worth Individuals <span class="drawer-link-arrow">&#8250;</span></a>
+    <a href="/professionals" class="drawer-link">For Professionals <span class="drawer-link-arrow">&#8250;</span></a>
+    <div class="drawer-section-label">About</div>
+    <a href="/about/mckay-tucker" class="drawer-link">J. McKay Tucker, Esq. <span class="drawer-link-arrow">&#8250;</span></a>
+    <a href="/about/jay-allen" class="drawer-link">Jay Allen, Esq. <span class="drawer-link-arrow">&#8250;</span></a>
+    <a href="/about" class="drawer-link">Our Process <span class="drawer-link-arrow">&#8250;</span></a>
+    <a href="/contact" class="drawer-cta">Book Free Consultation</a>
+    <a href="tel:4800000000" class="drawer-phone">(480) 000-0000</a>
+  </div>
+
+  <!-- Page Content -->
+  <main>
+    <slot />
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-logo-name">Mesa Estate Planning</span>
+        <span class="footer-logo-sub">Attorney at Law &middot; Mesa, AZ</span>
+        <p>Helping Mesa families and business owners protect what matters most — with expert legal counsel and personal attention.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col"><h4>Services</h4><ul><li><a href="/services/wills-and-trusts">Wills &amp; Trusts</a></li><li><a href="/services/powers-of-attorney">Powers of Attorney</a></li><li><a href="/services/business-succession">Business Succession</a></li><li><a href="/services/asset-protection">Asset Protection</a></li><li><a href="/services/estate-tax-planning">Estate Tax Planning</a></li></ul></div>
+        <div class="footer-col"><h4>Who We Serve</h4><ul><li><a href="/families">Families &amp; Parents</a></li><li><a href="/business-owners">Business Owners</a></li><li><a href="/high-net-worth">High-Net-Worth</a></li><li><a href="/professionals">For Professionals</a></li></ul></div>
+        <div class="footer-col"><h4>Resources</h4><ul><li><a href="/blog">Articles &amp; Guides</a></li><li><a href="/tools">Free Tools</a></li><li><a href="/downloads">Checklists</a></li><li><a href="/blog?filter=case-studies">Case Studies</a></li></ul></div>
+        <div class="footer-col"><h4>Firm</h4><ul><li><a href="/about/mckay-tucker">J. McKay Tucker, Esq.</a></li><li><a href="/about/jay-allen">Jay Allen, Esq.</a></li><li><a href="/about">Our Process</a></li><li><a href="tel:4800000000">(480) 000-0000</a></li><li><a href="mailto:info@mesaestateplan.com">info@mesaestateplan.com</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">The information on this website is for general informational purposes only and does not constitute legal advice. No attorney-client relationship is formed by visiting this website or submitting a contact form. Mesa Estate Planning PLLC &middot; 48 N Macdonald, Mesa, AZ 85201.</p>
+      <span class="footer-copy">&copy; {new Date().getFullYear()} Mesa Estate Planning PLLC</span>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile CTA Bar -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="/contact" class="sticky-cta-btn">Book Free Consultation</a>
+    <a href="tel:4800000000" class="sticky-cta-phone">&#128222;</a>
+  </div>
+
+  <script>
+    // Hamburger toggle
+    const hamburger = document.getElementById('navHamburger');
+    const drawer = document.getElementById('mobileDrawer');
+    if (hamburger && drawer) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        drawer.classList.toggle('open');
+        document.body.style.overflow = drawer.classList.contains('open') ? 'hidden' : '';
+      });
+      drawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('open');
+          drawer.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealElements.forEach(el => observer.observe(el));
+
+    // Nav shadow
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (nav) nav.style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,0.12)' : 'none';
+    }, { passive: true });
+
+    // Sticky CTA
+    const stickyCta = document.getElementById('stickyCta');
+    const heroSection = document.querySelector('.hero');
+    const contactSection = document.getElementById('contact');
+    if (stickyCta) {
+      if (heroSection) {
+        new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) stickyCta.classList.add('visible');
+            else stickyCta.classList.remove('visible');
+          });
+        }, { threshold: 0.1 }).observe(heroSection);
+      } else {
+        // Non-homepage: show after scrolling 300px
+        window.addEventListener('scroll', () => {
+          stickyCta.classList.toggle('visible', window.scrollY > 300);
+        }, { passive: true });
+      }
+      if (contactSection) {
+        new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) stickyCta.classList.remove('visible');
+          });
+        }, { threshold: 0.2 }).observe(contactSection);
+      }
+    }
+  </script>
+</body>
+</html>

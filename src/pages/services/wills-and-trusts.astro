@@ -1,0 +1,88 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const relatedServices = [
+  { title: 'Powers of Attorney', href: '/services/powers-of-attorney', desc: 'Healthcare and financial directives for incapacity planning.' },
+  { title: 'Asset Protection', href: '/services/asset-protection', desc: 'LLCs and trusts to shield your wealth from creditors.' },
+  { title: 'Estate Tax Planning', href: '/services/estate-tax-planning', desc: 'Minimize estate taxes with gifting and trust strategies.' },
+];
+---
+
+<ServiceLayout
+  title="Wills & Trusts Attorney in Mesa, AZ"
+  description="Mesa estate planning attorney helping Arizona families create wills, revocable living trusts, and pour-over wills to avoid probate and protect beneficiaries."
+  heroTitle="Wills & Trusts"
+  heroSubtitle="Revocable living trusts, irrevocable trusts, and pour-over wills designed to avoid probate, protect your beneficiaries, and give you control over your legacy."
+  keywords="wills mesa az, trusts mesa arizona, revocable living trust, probate avoidance, estate planning attorney mesa"
+  relatedServices={relatedServices}
+>
+  <div class="content-section">
+    <h2>Why Every Arizona Family Should Consider a Trust</h2>
+    <p><!-- Your content from the Sonnet chat goes here --></p>
+    <p>Arizona's probate process is public, court-supervised, and can take 6–12 months. A revocable living trust avoids probate entirely, keeping your affairs private and your family out of court.</p>
+  </div>
+
+  <div class="content-section">
+    <h2>What We Help You Create</h2>
+    <div class="content-grid">
+      <div class="content-card">
+        <h3>Revocable Living Trust</h3>
+        <p>The foundation of most estate plans. Avoids probate, maintains privacy, and gives you full control during your lifetime.</p>
+      </div>
+      <div class="content-card">
+        <h3>Pour-Over Will</h3>
+        <p>A safety net that catches any assets not transferred to your trust during your lifetime.</p>
+      </div>
+      <div class="content-card">
+        <h3>Irrevocable Trusts</h3>
+        <p>For asset protection and tax planning. Once established, these trusts shield assets from creditors and reduce your taxable estate.</p>
+      </div>
+      <div class="content-card">
+        <h3>Trust Funding Guidance</h3>
+        <p>A trust only works if it's funded. We walk you through retitling your home, accounts, and other assets into your trust.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Do I need a trust or just a will?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Most Arizona families with a home or assets over $75,000 benefit from a trust. A will alone requires probate, which is public, slow, and expensive. A trust avoids all of that. During your free consultation, we'll help you determine exactly what you need.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          How much does a trust cost in Arizona?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>We offer transparent flat-fee pricing. You'll receive an exact quote after your free consultation — no hourly surprises. The cost depends on the complexity of your situation, but most trust-based plans are a fraction of what probate would cost your family.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          How long does it take to set up a trust?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Most clients complete their trust-based estate plan within 2–4 weeks. The process involves a consultation, document drafting, a review meeting, and a signing appointment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</ServiceLayout>

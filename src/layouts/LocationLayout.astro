@@ -1,0 +1,70 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+export interface Props {
+  city: string;
+  title: string;
+  description: string;
+  keywords?: string;
+}
+
+const { city, title, description, keywords } = Astro.props;
+
+const locationSchema = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": `Mesa Estate Planning — Serving ${city}, AZ`,
+  "description": description,
+  "url": Astro.url.href,
+  "areaServed": {
+    "@type": "City",
+    "name": city,
+    "containedInPlace": { "@type": "State", "name": "Arizona" }
+  },
+  "provider": {
+    "@type": "Attorney",
+    "name": "Mesa Estate Planning PLLC",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "48 N Macdonald",
+      "addressLocality": "Mesa",
+      "addressRegion": "AZ",
+      "postalCode": "85201"
+    }
+  }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  schema={locationSchema}
+>
+  <section class="service-hero">
+    <div class="service-hero-content">
+      <div class="hero-eyebrow" style="opacity:1;animation:none;">Estate Planning in {city}, Arizona</div>
+      <h1 class="hero-h1" style="opacity:1;animation:none;">{city} Estate Planning Attorney</h1>
+      <p class="hero-body" style="opacity:1;animation:none;">{description}</p>
+      <div class="hero-btns" style="opacity:1;animation:none;">
+        <a href="/contact" class="btn-bronze">Book Free Consultation</a>
+        <a href="tel:4800000000" class="btn-ghost-w">Call (480) 000-0000</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-content">
+    <slot />
+  </section>
+
+  <div class="cta-band">
+    <div class="cta-band-content">
+      <h2>Serving {city} families and business owners</h2>
+      <p>Book a free 30-minute consultation — no obligation, just clarity.</p>
+      <div class="cta-band-actions">
+        <a href="/contact" class="btn-white">Book Free Consultation</a>
+        <span class="cta-band-sub">Or call us at (480) 000-0000</span>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
