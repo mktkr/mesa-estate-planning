@@ -1333,3 +1333,5 @@ a, button { -webkit-tap-highlight-color: rgba(0,0,0,0.04); }
   .service-hero { padding-top: calc(68px + 80px); padding-bottom: 72px; }
   .service-hero-content { max-width: 720px; }
 }
+.service-hero .hero-h1 { font-size: clamp(1.8rem, 5.5vw, 2.6rem); line-height: 1.14; opacity: 1; animation: none; }
+.service-hero .hero-eyebrow, .service-hero .hero-body, .service-hero .hero-btns { opacity: 1; animation: none; }
