@@ -1,0 +1,109 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+  schema?: object;
+  keywords?: string;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  ogImage = '/images/og-default.jpg',
+  ogType = 'website',
+  noindex = false,
+  schema,
+  keywords = 'estate planning, mesa arizona, wills, trusts, asset protection, probate, estate attorney',
+} = Astro.props;
+
+const siteName = 'Mesa Estate Planning';
+const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
+
+// Default LocalBusiness schema for every page
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Attorney", "LegalService"],
+  "name": "Mesa Estate Planning PLLC",
+  "description": "Estate planning attorney in Mesa, Arizona specializing in wills, trusts, asset protection, and business succession planning.",
+  "url": "https://www.mesaestateplanninglawyers.com",
+  "telephone": "(480) 000-0000",
+  "email": "info@mesaestateplanninglawyers.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "48 N Macdonald",
+    "addressLocality": "Mesa",
+    "addressRegion": "AZ",
+    "postalCode": "85201",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 33.4152,
+    "longitude": -111.8315
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Mesa", "containedInPlace": { "@type": "State", "name": "Arizona" } },
+    { "@type": "City", "name": "Chandler", "containedInPlace": { "@type": "State", "name": "Arizona" } },
+    { "@type": "City", "name": "Gilbert", "containedInPlace": { "@type": "State", "name": "Arizona" } },
+    { "@type": "City", "name": "Tempe", "containedInPlace": { "@type": "State", "name": "Arizona" } },
+    { "@type": "City", "name": "Queen Creek", "containedInPlace": { "@type": "State", "name": "Arizona" } },
+    { "@type": "City", "name": "Scottsdale", "containedInPlace": { "@type": "State", "name": "Arizona" } }
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "17:00"
+  },
+  "priceRange": "$$",
+  "image": "https://www.mesaestateplanninglawyers.com/images/family-hero.jpg",
+  "sameAs": []
+};
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Primary Meta Tags -->
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="author" content="Mesa Estate Planning PLLC" />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonical} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonical} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(ogImage, Astro.site)} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonical} />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+{schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}

@@ -1188,6 +1188,13 @@ a, button { -webkit-tap-highlight-color: rgba(0,0,0,0.04); }
 .service-hero-content {
   position: relative; z-index: 1; max-width: 640px; margin: 0 auto;
 }
+.service-hero .hero-h1 {
+  font-size: clamp(1.8rem, 5.5vw, 2.6rem); line-height: 1.14;
+  opacity: 1; animation: none;
+}
+.service-hero .hero-eyebrow { opacity: 1; animation: none; }
+.service-hero .hero-body { opacity: 1; animation: none; }
+.service-hero .hero-btns { opacity: 1; animation: none; }
 
 /* Quick Answer Box */
 .quick-answer {

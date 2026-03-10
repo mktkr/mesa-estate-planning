@@ -1,0 +1,111 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+---
+
+<ServiceLayout
+  title="J. McKay Tucker, Esq. | Mesa Estate Planning Attorney"
+  description="J. McKay Tucker, Esq. is a Mesa, Arizona estate planning and business law attorney. Born and raised in Mesa. ASU Law, BYU Economics. Founder of Mesa Estate Planning."
+  heroTitle="J. McKay Tucker, Esq."
+  heroSubtitle="Born and raised in Mesa. Built this firm for the people he grew up around."
+>
+  <div class="content-section">
+    <h2>Bio</h2>
+    <p>McKay grew up in Mesa. He left to study economics at Brigham Young University, went on to Arizona State University Sandra Day O'Connor College of Law, and spent time working alongside some of the most sophisticated estate planning practices in the country — serving founders, executives, and ultra-high-net-worth families whose plans involved the kind of complexity most attorneys never encounter.</p>
+
+<p>What he brought back home was a conviction that took shape slowly over those years. The thoroughness. The real conversations. The sense that every client's situation deserved genuine thought regardless of the dollar amount involved. When he came back to Mesa — where he grew up, where his family has roots going back generations — he wanted to build something that brought that standard home. Not just for the wealthy. For everyone.</p>
+
+<p>Mesa Estate Planning is the firm he built around that idea.</p>
+
+  </div>
+
+  <div class="content-section">
+    <h2>What McKay Focuses On</h2>
+    <p>McKay's practice centers on estate planning and business law for Arizona families, business owners, and high-net-worth individuals. He works on revocable and irrevocable trust structures, powers of attorney and healthcare directives, business succession planning, entity formation, QSBS planning, asset protection, and estate and charitable tax strategies.</p>
+
+<p>Before starting Mesa Estate Planning, McKay worked at McCullough Law, where his work spanned complex trust structures, multi-generational estate planning, and business transactions for clients at the highest levels of wealth. That experience shapes how he approaches every client — with the same rigor and attention to detail, regardless of the size of the estate.</p>
+
+  </div>
+
+  <div class="content-section">
+    <h2>On Working With Clients</h2>
+    <p>McKay's approach to client work comes directly from watching how the best practitioners in the field operate. The most sophisticated estate planning isn't just technically correct — it's understood. A plan that sits in a drawer because the client never fully grasped what it does is not a good plan.</p>
+
+<p>Every client McKay works with gets a recommendation they can explain, documents they've reviewed before signing, and funding guidance they can actually execute. The goal isn't to produce paperwork. It's to produce clarity.</p>
+
+  </div>
+
+  <div class="content-section">
+    <h2>Background</h2>
+    <strong>Education</strong>
+Arizona State University Sandra Day O'Connor College of Law, J.D., 2023
+Brigham Young University, B.S. Economics
+
+<strong>Admissions</strong>
+Arizona State Bar
+
+<strong>Memberships</strong>
+East Valley Estate Planning Council
+Arizona State Bar — Trusts and Estates Section
+
+<strong>Based in</strong>
+Mesa, Arizona — where he was born, raised, and still lives.
+
+  </div>
+
+  <div class="content-section">
+    <h2>A Note on Jay Allen</h2>
+    <p>McKay practices alongside Jay Allen, Esq., one of the most experienced estate planning attorneys in the East Valley, who brings more than 25 years of Arizona estate planning practice to the firm as Of Counsel. Clients benefit from McKay's preparation and Jay's depth — a combination that gives this boutique firm a level of collective experience that most solo practices can't offer.</p>
+
+  </div>
+
+  <div class="content-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Where is McKay Tucker licensed to practice?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>McKay is licensed to practice law in Arizona. Mesa Estate Planning serves clients throughout Arizona, with a primary focus on Mesa, Chandler, Gilbert, Tempe, Queen Creek, and the broader East Valley.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          How long has McKay been practicing estate planning law?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>McKay graduated from Arizona State University Sandra Day O'Connor College of Law in 2023 and has focused on estate planning and business law since entering practice. Prior to founding Mesa Estate Planning, he worked at McCullough Law, where his practice included complex trust and estate planning work for high-net-worth individuals, founders, and executives.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          What makes Mesa Estate Planning different from other firms?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>McKay built this firm around a single idea — that the quality of estate planning available to wealthy founders and executives should be accessible to every Arizona family. The process, the attention, the level of explanation and follow-through — none of it is reserved for clients with large estates. Every client gets the same standard of care.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Does McKay work with clients outside of Mesa?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. While the firm is based in Mesa, McKay works with clients throughout Arizona. Many consultations and follow-up meetings can be conducted remotely for clients who prefer it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</ServiceLayout>

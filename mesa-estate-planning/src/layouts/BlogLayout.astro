@@ -1,0 +1,84 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  publishDate: string;
+  author?: string;
+  category?: string;
+  readTime?: string;
+  keywords?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  publishDate,
+  author = 'J. McKay Tucker, Esq.',
+  category = 'Estate Planning',
+  readTime = '5 min read',
+  keywords,
+  ogImage,
+} = Astro.props;
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": {
+    "@type": "Person",
+    "name": author,
+    "jobTitle": "Estate Planning Attorney",
+    "worksFor": {
+      "@type": "LegalService",
+      "name": "Mesa Estate Planning PLLC"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mesa Estate Planning PLLC",
+    "url": "https://www.mesaestateplanninglawyers.com"
+  },
+  "datePublished": publishDate,
+  "dateModified": publishDate,
+  "url": Astro.url.href,
+  "mainEntityOfPage": Astro.url.href,
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  ogType="article"
+  ogImage={ogImage}
+  schema={articleSchema}
+>
+  <article class="blog-article">
+    <header class="article-header">
+      <div class="article-meta">
+        <span class="article-category">{category}</span>
+        <span class="article-date">{new Date(publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+        <span class="article-read">{readTime}</span>
+      </div>
+      <h1 class="article-title">{title}</h1>
+      <p class="article-subtitle">{description}</p>
+      <div class="article-author">
+        <div class="article-author-name">By {author}</div>
+      </div>
+    </header>
+    <div class="article-body">
+      <slot />
+    </div>
+    <footer class="article-footer">
+      <div class="article-cta">
+        <h3>Need help with your estate plan?</h3>
+        <p>Book a free consultation and we'll help you figure out exactly what you need.</p>
+        <a href="/contact" class="btn-bronze">Book Free Consultation</a>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>
