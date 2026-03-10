@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const audiences = [
+  { title: 'Families & Parents', desc: 'Guardianship designations, revocable trusts, powers of attorney, and blended family planning — built around protecting your children and your assets.', href: '/who-we-serve/families', icon: '🏡' },
+  { title: 'Business Owners', desc: 'Succession planning, buy-sell agreements, entity structuring, and exit preparation — so your business is protected no matter what happens.', href: '/who-we-serve/business-owners', icon: '🏢' },
+  { title: 'High-Net-Worth Individuals', desc: 'Advanced trust structures, estate tax reduction, asset protection, and multigenerational wealth transfer for complex financial situations.', href: '/who-we-serve/high-net-worth', icon: '💼' },
+];
+---
+<BaseLayout
+  title="Who We Serve | Mesa Estate Planning | Mesa, AZ"
+  description="Estate planning for Arizona families, business owners, and high-net-worth individuals. Personalized plans built around your situation. Free consultation."
+  keywords="estate planning mesa az, estate planning families arizona, business owner estate planning, high net worth estate planning"
+>
+  <section class="services-index-hero">
+    <div class="services-index-hero-content">
+      <div class="hero-eyebrow" style="opacity:1;animation:none;">Who We Serve</div>
+      <h1 class="hero-h1" style="opacity:1;animation:none;">Estate planning for <em>your</em> situation</h1>
+      <p class="hero-body" style="opacity:1;animation:none;">A young family protecting their children, a business owner planning an exit, and a high-net-worth individual reducing estate tax exposure all need estate plans — but not the same estate plan. We build each one around the client sitting across the table.</p>
+      <div class="hero-btns" style="opacity:1;animation:none;">
+        <a href="#contact" class="btn-bronze">Book Free Consultation</a>
+        <a href="tel:4800000000" class="btn-ghost-w">Call (480) 000-0000</a>
+      </div>
+    </div>
+  </section>
+  <section class="services-index-grid">
+    <div class="services-index-section">
+      <div class="services-index-label">Find Your Situation</div>
+      <div class="services-card-grid">
+        {audiences.map(a => (
+          <a href={a.href} class="services-index-card">
+            <div class="services-card-icon">{a.icon}</div>
+            <h3>{a.title}</h3>
+            <p>{a.desc}</p>
+            <span class="services-card-link">Learn more &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+    <div class="services-index-section">
+      <div class="services-index-label">For Professionals</div>
+      <div class="services-card-grid">
+        <a href="/for-professionals" class="services-index-card">
+          <div class="services-card-icon">🤝</div>
+          <h3>Referral Partnerships</h3>
+          <p>Financial planners, CPAs, insurance advisors, and attorneys — we welcome referral relationships built on trust and clear communication. Your client gets expert estate planning and comes back to you.</p>
+          <span class="services-card-link">Learn about referrals &rarr;</span>
+        </a>
+      </div>
+    </div>
+    <div class="services-index-cta">
+      <h2>Not sure where you fit?</h2>
+      <p>Most clients don't fit neatly into one category — and that's fine. Start with a free consultation and we'll figure out exactly what you need together.</p>
+      <a href="#contact" class="btn-bronze">Book Free Consultation</a>
+    </div>
+  </section>
+</BaseLayout>
