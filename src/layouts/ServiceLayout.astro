@@ -7,6 +7,9 @@ export interface Props {
   heroTitle: string;
   heroSubtitle: string;
   keywords?: string;
+  breadcrumbTitle?: string;
+  breadcrumbParent?: string;
+  breadcrumbParentUrl?: string;
   relatedServices?: Array<{ title: string; href: string; desc: string }>;
 }
 
@@ -16,38 +19,51 @@ const {
   heroTitle,
   heroSubtitle,
   keywords,
+  breadcrumbTitle = '',
+  breadcrumbParent = 'Services',
+  breadcrumbParentUrl = '/services',
   relatedServices = [],
 } = Astro.props;
 
-// Service-specific schema
+const crumbTitle = breadcrumbTitle || title.split('|')[0].trim();
+
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "LegalService",
-  "name": title + " — Mesa Estate Planning",
+  "name": title,
   "description": description,
   "provider": {
     "@type": "Attorney",
     "name": "Mesa Estate Planning PLLC",
-    "url": "https://www.mesaestateplanninglawyers.com"
+    "url": "https://www.mesaestateplanninglawyer.com"
   },
-  "areaServed": {
-    "@type": "State",
-    "name": "Arizona"
-  },
+  "areaServed": { "@type": "State", "name": "Arizona" },
   "url": Astro.url.href,
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.mesaestateplanninglawyer.com" },
+    { "@type": "ListItem", "position": 2, "name": breadcrumbParent, "item": "https://www.mesaestateplanninglawyer.com" + breadcrumbParentUrl },
+    { "@type": "ListItem", "position": 3, "name": crumbTitle }
+  ]
 };
 ---
 
-<BaseLayout
-  title={title}
-  description={description}
-  keywords={keywords}
-  schema={serviceSchema}
->
-  <!-- Service Hero -->
+<BaseLayout title={title} description={description} keywords={keywords} schema={serviceSchema}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
   <section class="service-hero">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href={breadcrumbParentUrl}>{breadcrumbParent}</a>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">{crumbTitle}</span>
+    </nav>
     <div class="service-hero-content">
-      <div class="hero-eyebrow" style="opacity:1;animation:none;">Mesa Estate Planning</div>
       <h1 class="hero-h1" style="opacity:1;animation:none;">{heroTitle}</h1>
       <p class="hero-body" style="opacity:1;animation:none;">{heroSubtitle}</p>
       <div class="hero-btns" style="opacity:1;animation:none;">
@@ -57,12 +73,10 @@ const serviceSchema = {
     </div>
   </section>
 
-  <!-- Service Content -->
   <section class="service-content">
     <slot />
   </section>
 
-  <!-- Related Services -->
   {relatedServices.length > 0 && (
     <section class="related-services">
       <div class="section-label">Related Services</div>
@@ -79,7 +93,6 @@ const serviceSchema = {
     </section>
   )}
 
-  <!-- CTA Band -->
   <div class="cta-band">
     <div class="cta-band-content">
       <h2>Ready to get started?</h2>
