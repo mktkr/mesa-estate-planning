@@ -56,14 +56,14 @@ const breadcrumbSchema = {
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
   <section class="service-hero">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a>
-      <span class="breadcrumb-sep">/</span>
-      <a href={breadcrumbParentUrl}>{breadcrumbParent}</a>
-      <span class="breadcrumb-sep">/</span>
-      <span class="breadcrumb-current">{crumbTitle}</span>
-    </nav>
     <div class="service-hero-content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href={breadcrumbParentUrl}>{breadcrumbParent}</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">{crumbTitle}</span>
+      </nav>
       <h1 class="hero-h1" style="opacity:1;animation:none;">{heroTitle}</h1>
       <p class="hero-body" style="opacity:1;animation:none;">{heroSubtitle}</p>
       <div class="hero-btns" style="opacity:1;animation:none;">
