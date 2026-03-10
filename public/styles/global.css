@@ -1335,3 +1335,4 @@ a, button { -webkit-tap-highlight-color: rgba(0,0,0,0.04); }
 }
 .service-hero .hero-h1 { font-size: clamp(1.8rem, 5.5vw, 2.6rem); line-height: 1.14; opacity: 1; animation: none; }
 .service-hero .hero-eyebrow, .service-hero .hero-body, .service-hero .hero-btns { opacity: 1; animation: none; }
+.content-section p strong:first-child { display: block; font-family: var(--serif); font-size: 1.02rem; font-weight: 500; color: var(--charcoal); margin-top: 20px; margin-bottom: 2px; }
