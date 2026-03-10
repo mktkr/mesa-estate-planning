@@ -7,17 +7,514 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Mesa estate planning attorney helping Arizona families and business owners protect assets, provide for loved ones, and preserve legacies with wills, trusts, and asset protection."
   keywords="estate planning mesa az, wills trusts mesa arizona, estate attorney mesa, probate avoidance arizona, asset protection mesa"
 >
-  <!-- 
-    The full homepage content from our mobile-first HTML goes here.
-    This includes: hero, trust bar, segments, process, why us, 
-    services, resources, professionals, testimonials, CTA band, 
-    FAQ, and contact sections.
-    
-    TODO: Migrate the full homepage HTML content into this file.
-    The nav and footer are already in BaseLayout.
-  -->
-  
-  <div style="padding: 200px 40px; text-align: center; font-family: var(--serif); font-size: 2rem; color: var(--charcoal);">
-    Homepage content will be migrated from the mobile-first HTML file.
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Mesa, Arizona Estate Planning</div>
+    <h1 class="hero-h1">Protect what <br>matters <em>most</em> <br>to you.</h1>
+
+    <!-- Hero family photo (mobile) — sits right below headline -->
+    <div class="hero-photo-mobile" style="opacity:0;animation:heroFadeUp 0.6s ease 0.28s forwards;">
+      <img src="/images/family-hero.jpg" alt="McKay Tucker and family — Mesa Estate Planning" class="hero-photo-img">
+    </div>
+
+    <p class="hero-body">We help Mesa families and business owners build estate plans that protect assets, provide for loved ones, and preserve legacies — with clarity and confidence.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-bronze">Book Free Consultation</a>
+      <a href="#process" class="btn-ghost-w">See how it works &rarr;</a>
+    </div>
+    <div class="hero-proof">
+      <div class="hero-proof-item"><span class="hero-proof-num">25+</span><span class="hero-proof-lbl">Years Exp.</span></div>
+      <div class="hero-proof-item"><span class="hero-proof-num">5&#9733;</span><span class="hero-proof-lbl">Reviews</span></div>
+      <div class="hero-proof-item"><span class="hero-proof-num">Mesa</span><span class="hero-proof-lbl">AZ Based</span></div>
+    </div>
+    <div class="hero-quote">
+      <p class="hero-quote-text">"We'd been putting this off for years. Two meetings later, everything was done."</p>
+      <div class="hero-quote-attr">— Robert &amp; Jennifer T., Mesa AZ</div>
+    </div>
   </div>
+
+  <!-- Desktop hero right -->
+  <div class="hero-right-desktop">
+    <div class="hero-photo-frame">
+      <img src="/images/family-hero.jpg" alt="McKay Tucker and family — Mesa Estate Planning" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;">
+      <div class="hero-stats-float">
+        <div class="hero-stat"><span class="hero-stat-num">25+</span><span class="hero-stat-lbl">Years Combined Exp.</span></div>
+        <div class="hero-stat"><span class="hero-stat-num">5&#9733;</span><span class="hero-stat-lbl">Google Reviews</span></div>
+        <div class="hero-stat"><span class="hero-stat-num">Mesa</span><span class="hero-stat-lbl">AZ Based</span></div>
+      </div>
+    </div>
+    <div class="hero-quote-desktop">
+      <p class="hero-quote-text">"We'd been putting this off for years. Two meetings later, everything was done. Left feeling like a weight had been lifted."</p>
+      <div class="hero-quote-attr">— Robert &amp; Jennifer T., Mesa AZ &middot; Revocable Living Trust</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><span class="trust-dot"></span>State Bar of Arizona</div>
+    <span class="trust-separator">&middot;</span>
+    <div class="trust-item"><span class="trust-dot"></span>East Valley Estate Planning Council</div>
+    <span class="trust-separator">&middot;</span>
+    <div class="trust-item"><span class="trust-dot"></span>Serving Mesa, Chandler &amp; Gilbert</div>
+    <span class="trust-separator">&middot;</span>
+    <div class="trust-item"><span class="trust-dot"></span>48 N Macdonald &middot; Mesa, AZ 85201</div>
+    <span class="trust-separator">&middot;</span>
+    <div class="trust-item"><span class="trust-dot"></span>Virtual Consultations Available</div>
+    <span class="trust-separator">&middot;</span>
+    <!-- Duplicate set for seamless loop -->
+    <div class="trust-set-dupe trust-item"><span class="trust-dot"></span>State Bar of Arizona</div>
+    <span class="trust-set-dupe trust-separator">&middot;</span>
+    <div class="trust-set-dupe trust-item"><span class="trust-dot"></span>East Valley Estate Planning Council</div>
+    <span class="trust-set-dupe trust-separator">&middot;</span>
+    <div class="trust-set-dupe trust-item"><span class="trust-dot"></span>Serving Mesa, Chandler &amp; Gilbert</div>
+    <span class="trust-set-dupe trust-separator">&middot;</span>
+    <div class="trust-set-dupe trust-item"><span class="trust-dot"></span>48 N Macdonald &middot; Mesa, AZ 85201</div>
+    <span class="trust-set-dupe trust-separator">&middot;</span>
+    <div class="trust-set-dupe trust-item"><span class="trust-dot"></span>Virtual Consultations Available</div>
+    <span class="trust-set-dupe trust-separator">&middot;</span>
+  </div>
+</div>
+
+<!-- AUDIENCE SEGMENTS -->
+<section class="segments">
+  <div class="segments-header">
+    <div class="section-label">Who We Help</div>
+    <h2 class="section-title">Estate planning for <em>every life stage</em></h2>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-hint-track"></div>
+    <span>Swipe to explore</span>
+  </div>
+  <div class="segments-scroll" id="segmentsScroll">
+    <a href="#" class="segment-card reveal">
+      <div class="segment-icon">&#127969;</div>
+      <div class="segment-tag">Families &amp; Parents</div>
+      <h3>Protect your family if something happens to you</h3>
+      <p>We help you create the documents that ensure your children are cared for and your assets pass the way you intend.</p>
+      <div class="segment-services">
+        <div class="segment-svc">Guardianship designations</div>
+        <div class="segment-svc">Revocable living trusts</div>
+        <div class="segment-svc">Healthcare directives</div>
+        <div class="segment-svc">Life insurance trust planning</div>
+      </div>
+      <div class="segment-arrow">Learn more &rarr;</div>
+    </a>
+    <a href="#" class="segment-card reveal reveal-d1">
+      <div class="segment-icon">&#127970;</div>
+      <div class="segment-tag">Business Owners</div>
+      <h3>Protect your business and what you've built</h3>
+      <p>Plan for succession, protect against unexpected events, and build structures that shield personal and business assets.</p>
+      <div class="segment-services">
+        <div class="segment-svc">Business succession planning</div>
+        <div class="segment-svc">Buy-sell agreements</div>
+        <div class="segment-svc">Asset protection structures</div>
+        <div class="segment-svc">QSBS tax strategies</div>
+      </div>
+      <div class="segment-arrow">Learn more &rarr;</div>
+    </a>
+    <a href="#" class="segment-card reveal reveal-d2">
+      <div class="segment-icon">&#128188;</div>
+      <div class="segment-tag">High-Net-Worth Individuals</div>
+      <h3>Sophisticated strategies for complex estates</h3>
+      <p>Advanced estate plans that minimize taxes, protect wealth across generations, and address multi-state holdings.</p>
+      <div class="segment-services">
+        <div class="segment-svc">Irrevocable trust strategies</div>
+        <div class="segment-svc">Estate tax minimization</div>
+        <div class="segment-svc">Charitable trust planning</div>
+        <div class="segment-svc">Dynasty trust structures</div>
+      </div>
+      <div class="segment-arrow">Learn more &rarr;</div>
+    </a>
+  </div>
+  <div class="scroll-dots" id="segmentDots">
+    <div class="scroll-dot active"></div>
+    <div class="scroll-dot"></div>
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="process-header reveal">
+    <div class="section-label" style="color:rgba(255,255,255,0.4);">Our Process</div>
+    <h2 class="section-title-w">A clear path to <em>peace of mind</em></h2>
+    <p class="process-desc">Simple, transparent, and stress-free. Most clients complete their estate plan in just a few weeks.</p>
+  </div>
+  <div class="steps">
+    <div class="step reveal"><div class="step-num">01</div><div class="step-content"><h3>Free Consultation</h3><p>We learn about your goals, family, and concerns. No obligation, no pressure — just clarity.</p></div></div>
+    <div class="step reveal reveal-d1"><div class="step-num">02</div><div class="step-content"><h3>Custom Plan Design</h3><p>We design a tailored estate plan that addresses your specific needs and situation.</p></div></div>
+    <div class="step reveal reveal-d2"><div class="step-num">03</div><div class="step-content"><h3>Review &amp; Refine</h3><p>We walk through every document in plain English so you fully understand your plan.</p></div></div>
+    <div class="step reveal reveal-d3"><div class="step-num">04</div><div class="step-content"><h3>Sign &amp; Implement</h3><p>We handle execution, notarization, and guide you through funding your trust.</p></div></div>
+  </div>
+
+  <!-- Video play card -->
+  <div class="video-card reveal" id="videoTrigger">
+    <div class="video-play-btn"></div>
+    <div class="video-card-text">
+      <h4>See how it works</h4>
+      <p>Watch a 60-second walkthrough of our process</p>
+    </div>
+  </div>
+</section>
+<section class="why" id="about">
+  <div class="why-layout">
+    <div>
+      <div class="why-intro reveal">
+        <div class="section-label">Why Mesa Estate Planning</div>
+        <h2 class="section-title" style="margin-bottom:14px;">More than just <em>documents</em></h2>
+      </div>
+      <p class="why-body reveal reveal-d1">Estate planning is one of the most important things you'll do for your family — so we treat it that way. No assembly-line approach, no confusing jargon. Just expert counsel and personal attention from a firm that's deeply rooted in Mesa and the East Valley.</p>
+      <div class="why-cta reveal reveal-d2"><a href="#contact" class="btn-bronze">Book Your Free Consultation</a></div>
+    </div>
+    <div class="features">
+      <div class="feature reveal"><span class="feature-num">01</span><div><h4>Mesa Local — We Know Arizona Law</h4><p>Arizona has unique estate planning laws. We're based in Mesa and focus exclusively on Arizona residents.</p></div></div>
+      <div class="feature reveal reveal-d1"><span class="feature-num">02</span><div><h4>Plain English, Always</h4><p>You'll leave every meeting knowing exactly what your documents say and why.</p></div></div>
+      <div class="feature reveal reveal-d2"><span class="feature-num">03</span><div><h4>Transparent, Flat-Fee Pricing</h4><p>No hourly billing surprises. Know your total cost before you commit.</p></div></div>
+      <div class="feature reveal reveal-d3"><span class="feature-num">04</span><div><h4>Ongoing Relationship</h4><p>Annual reviews to keep your estate plan current as your family, assets, and laws evolve.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header-grid">
+    <div class="services-header reveal">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Comprehensive estate <em>planning services</em></h2>
+    </div>
+    <p class="services-desc reveal reveal-d1">From foundational documents every adult needs, to sophisticated strategies for high-net-worth families and business owners.</p>
+  </div>
+  <div class="services-tabs">
+    <button class="svc-tab active" onclick="switchTab('trusts')">Trusts &amp; Estates</button>
+    <button class="svc-tab" onclick="switchTab('business')">Business &amp; Tax</button>
+  </div>
+  <div id="panel-trusts" class="svc-panel active">
+    <div class="services-grid">
+      <div class="service-card"><div class="svc-icon">&#128220;</div><h3>Wills &amp; Trusts</h3><p>Revocable living trusts, irrevocable trusts, and pour-over wills designed to avoid probate and protect beneficiaries.</p><a href="#" class="svc-link">Learn more</a></div>
+      <div class="service-card"><div class="svc-icon">&#9997;&#65039;</div><h3>Powers of Attorney</h3><p>Durable financial POA and healthcare directives that ensure your wishes are honored if incapacitated.</p><a href="#" class="svc-link">Learn more</a></div>
+      <div class="service-card"><div class="svc-icon">&#128737;&#65039;</div><h3>Asset Protection</h3><p>LLCs, domestic asset protection trusts, and strategic titling to shield your wealth from creditors.</p><a href="#" class="svc-link">Learn more</a></div>
+      <div class="service-card"><div class="svc-icon">&#128202;</div><h3>Estate Tax Planning</h3><p>Gifting strategies, dynasty trusts, and estate tax minimization for significant assets.</p><a href="#" class="svc-link">Learn more</a></div>
+      <div class="service-card"><div class="svc-icon">&#129309;</div><h3>Charitable Planning</h3><p>Charitable remainder trusts, donor-advised funds, and philanthropic strategies for family and community.</p><a href="#" class="svc-link">Learn more</a></div>
+      <div class="service-card svc-cta-card"><div class="svc-icon">&#128172;</div><h3>Not sure where to start?</h3><p>Book a free consultation and we'll help you figure out exactly what you need.</p><a href="#contact" class="svc-cta-btn">Schedule now</a></div>
+    </div>
+  </div>
+  <div id="panel-business" class="svc-panel">
+    <div class="services-grid">
+      <div class="service-card"><div class="svc-icon">&#127970;</div><h3>Business Succession</h3><p>Buy-sell agreements and succession plans for smooth business transitions.</p><a href="#" class="svc-link">Learn more</a></div>
+      <div class="service-card"><div class="svc-icon">&#9878;&#65039;</div><h3>Business Formation</h3><p>LLC formation, S-corp elections, and entity structuring that protects personal assets.</p><a href="#" class="svc-link">Learn more</a></div>
+      <div class="service-card"><div class="svc-icon">&#128203;</div><h3>Commercial Lease Review</h3><p>Thorough review of terms, exclusives, and exit provisions in lease negotiations.</p><a href="#" class="svc-link">Learn more</a></div>
+      <div class="service-card"><div class="svc-icon">&#128161;</div><h3>QSBS Tax Planning</h3><p>Strategies that can eliminate up to $10M in capital gains for qualifying founders.</p><a href="#" class="svc-link">Learn more</a></div>
+      <div class="service-card svc-cta-card"><div class="svc-icon">&#128172;</div><h3>Not sure where to start?</h3><p>Book a free consultation and we'll help you figure out exactly what you need.</p><a href="#contact" class="svc-cta-btn">Schedule now</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section class="resources" id="resources">
+  <div class="resources-header">
+    <div class="section-label">Resource Library</div>
+    <h2 class="section-title">Free tools &amp; guides for <em>every situation</em></h2>
+    <p class="resources-desc">Plain-English articles, checklists, case studies, and interactive tools — for clients and the financial professionals who serve them.</p>
+  </div>
+  <div class="resource-filters" id="resourceFilters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="articles">Articles</button>
+    <button class="filter-btn" data-filter="guides">Guides</button>
+    <button class="filter-btn" data-filter="tools">Tools</button>
+    <button class="filter-btn" data-filter="case-studies">Case Studies</button>
+  </div>
+  <div class="resource-cards" id="resourceCards">
+    <a href="#" class="resource-card reveal" data-category="articles">
+      <div class="resource-thumb resource-thumb-a"><span class="resource-type-badge">Article</span></div>
+      <div class="resource-body">
+        <div class="resource-tag">Trusts &middot; Beginner</div>
+        <h3>Does Every Arizona Family Need a Living Trust?</h3>
+        <p>We break down when a trust makes sense, what it costs, and why Arizona's probate process makes this decision critical.</p>
+        <div class="resource-meta"><span class="resource-read">8 min read</span><span class="resource-arrow">Read &rarr;</span></div>
+      </div>
+    </a>
+    <a href="#" class="resource-card reveal reveal-d1" data-category="tools">
+      <div class="resource-thumb resource-thumb-b"><span class="resource-type-badge">Tool</span></div>
+      <div class="resource-body">
+        <div class="resource-tag">Interactive &middot; 2 min</div>
+        <h3>Estate Plan Needs Assessment</h3>
+        <p>Answer 8 quick questions. Get a personalized list of the documents you need — instantly, for free.</p>
+        <div class="resource-meta"><span class="resource-read">Free tool</span><span class="resource-arrow">Start &rarr;</span></div>
+      </div>
+    </a>
+    <a href="#" class="resource-card reveal reveal-d2" data-category="guides">
+      <div class="resource-thumb resource-thumb-c"><span class="resource-type-badge">Guide</span></div>
+      <div class="resource-body">
+        <div class="resource-tag">Business Owners</div>
+        <h3>What Happens to Your Business When You Die Without a Plan?</h3>
+        <p>Without a succession plan, Arizona law may force a sale or create family conflict.</p>
+        <div class="resource-meta"><span class="resource-read">6 min read</span><span class="resource-arrow">Read &rarr;</span></div>
+      </div>
+    </a>
+    <a href="#" class="resource-card reveal reveal-d3" data-category="guides">
+      <div class="resource-thumb resource-thumb-d"><span class="resource-type-badge">Checklist</span></div>
+      <div class="resource-body">
+        <div class="resource-tag">Families &middot; Parents</div>
+        <h3>The 3 Documents Every Arizona Adult Needs Right Now</h3>
+        <p>A healthcare directive, financial POA, and a will. Don't leave critical decisions to chance.</p>
+        <div class="resource-meta"><span class="resource-read">Free PDF</span><span class="resource-arrow">Download &rarr;</span></div>
+      </div>
+    </a>
+    <a href="#" class="resource-card reveal reveal-d4" data-category="case-studies">
+      <div class="resource-thumb resource-thumb-e"><span class="resource-type-badge">Case Study</span></div>
+      <div class="resource-body">
+        <div class="resource-tag">Case Study &middot; Real Scenario</div>
+        <h3>How One Mesa Family Avoided $180K in Probate Costs</h3>
+        <p>A real-world look at how a simple revocable trust saved significant time, money, and stress.</p>
+        <div class="resource-meta"><span class="resource-read">5 min read</span><span class="resource-arrow">Read &rarr;</span></div>
+      </div>
+    </a>
+    <!-- See all card -->
+    <a href="#" class="resource-see-more" id="resourceSeeMore">
+      <div class="resource-see-more-thumb">
+        <div class="resource-see-more-icon">&rarr;</div>
+      </div>
+      <div class="resource-see-more-body">
+        <div class="resource-tag">Resource Library</div>
+        <h3>See all resources</h3>
+        <p id="resourceSeeMoreCount">Browse our full collection of articles, guides, tools, and case studies.</p>
+        <div class="resource-see-more-footer">
+          <span>View all &rarr;</span>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="resource-cta-strip reveal">
+    <p><strong>Get new resources in your inbox.</strong> We publish plain-English guides, legal updates, and practical tools monthly.</p>
+    <a href="#" class="btn-outline-sage">Subscribe — Free</a>
+  </div>
+</section>
+
+<!-- FOR PROFESSIONALS -->
+<section class="professionals" id="professionals">
+  <div class="professionals-layout">
+    <div>
+      <div class="prof-label reveal">For Professionals</div>
+      <h2 class="prof-title reveal reveal-d1">A trusted estate planning partner for your <em>clients</em></h2>
+      <p class="prof-body reveal reveal-d2">Financial planners, CPAs, insurance agents, and attorneys — we welcome referral relationships built on trust and transparency.</p>
+      <div class="reveal reveal-d3" style="margin-bottom:28px;">
+        <a href="#" class="btn-ghost-taupe">Learn about referral partnerships &rarr;</a>
+      </div>
+    </div>
+    <div class="prof-partners">
+      <a href="#" class="prof-partner reveal"><span class="prof-partner-icon">&#128200;</span><div><h4>Financial Planners &amp; RIAs</h4><p>Estate docs that align with your clients' investment and tax strategies</p></div></a>
+      <a href="#" class="prof-partner reveal reveal-d1"><span class="prof-partner-icon">&#129518;</span><div><h4>CPAs &amp; Tax Professionals</h4><p>Trust structures and gifting strategies alongside your tax planning</p></div></a>
+      <a href="#" class="prof-partner reveal reveal-d2"><span class="prof-partner-icon">&#128274;</span><div><h4>Insurance Agents</h4><p>ILIT and beneficiary coordination to make policies work harder</p></div></a>
+      <a href="#" class="prof-partner reveal reveal-d3"><span class="prof-partner-icon">&#9878;&#65039;</span><div><h4>Divorce &amp; Family Law</h4><p>Post-divorce estate plan updates for blended family clients</p></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="testi-header">
+    <div class="section-label">Client Stories</div>
+    <h2 class="section-title">Real families, <em>real peace of mind</em></h2>
+  </div>
+  <div class="testi-scroll">
+    <div class="testi-card reveal"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-quote">"We'd been putting off estate planning for years. This team made the whole process feel manageable and meaningful. Finished in two meetings."</p><div class="testi-author"><div class="testi-avatar">R</div><div><div class="testi-name">Robert &amp; Jennifer T.</div><div class="testi-role">Mesa, AZ &middot; Young Family</div></div></div></div>
+    <div class="testi-card reveal reveal-d1"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-quote">"As a business owner with complex needs — buy-sell agreements, succession planning, personal estate docs — everything was handled seamlessly."</p><div class="testi-author"><div class="testi-avatar">D</div><div><div class="testi-name">David K.</div><div class="testi-role">Chandler, AZ &middot; Business Owner</div></div></div></div>
+    <div class="testi-card reveal reveal-d2"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-quote">"The flat-fee pricing was a huge relief. No surprise bills. The attorney even called to check in after we signed. That level of care is rare."</p><div class="testi-author"><div class="testi-avatar">M</div><div><div class="testi-name">Margaret H.</div><div class="testi-role">Gilbert, AZ &middot; Retired</div></div></div></div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band-content">
+    <h2>Ready to protect your family's <em>future?</em></h2>
+    <p>Book a free 30-minute consultation — no obligation, just clarity.</p>
+    <div class="cta-band-actions">
+      <a href="#contact" class="btn-white">Book Free Consultation</a>
+      <span class="cta-band-sub">Or call us at (480) 000-0000</span>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-header">
+    <div class="section-label" style="text-align:center;">FAQ</div>
+    <h2 class="section-title" style="text-align:center;">Common questions, <em>honest answers</em></h2>
+  </div>
+  <div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Do I really need an estate plan if I'm young and healthy?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Absolutely. Estate planning isn't just about death — it includes powers of attorney and healthcare directives that protect you if you become incapacitated. If you have children, a home, or any assets, you need an estate plan now.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">What's the difference between a will and a trust?<span class="faq-icon">+</span></button><div class="faq-answer"><p>A will takes effect at death and must go through Arizona's probate process — which is public and court-supervised. A trust takes effect immediately, avoids probate, is private, and can manage your assets during your lifetime. Most Arizona families benefit from having both.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">How much does estate planning cost?<span class="faq-icon">+</span></button><div class="faq-answer"><p>We offer transparent flat-fee pricing. You'll receive an exact quote after your free consultation — no hourly surprises, ever. Basic will packages and comprehensive trust-based plans are priced based on your specific needs.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">How long does the process take?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Most clients complete their estate plan within 2–4 weeks. The process involves a free consultation, document drafting, a review meeting, and a signing appointment. We can expedite if needed.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">Do you serve clients outside of Mesa?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes. We serve clients throughout the East Valley including Chandler, Gilbert, Tempe, Queen Creek, and Scottsdale. We also offer virtual consultations for clients anywhere in Arizona.</p></div></div>
+    <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)">I'm a financial advisor — how do referrals work?<span class="faq-icon">+</span></button><div class="faq-answer"><p>We welcome referral relationships with financial planners, CPAs, insurance agents, and other attorneys. Our process is designed to be easy for your clients and reflect well on your practice. We'll keep you informed at every step.</p></div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-layout">
+    <div>
+      <div class="contact-intro reveal">
+        <div class="section-label">Get in Touch</div>
+        <h2 class="section-title">Let's talk about <em>your plan</em></h2>
+        <p>Your first consultation is completely free. We'll learn about your situation and tell you exactly what you need — no pressure, no sales pitch.</p>
+      </div>
+      <div class="contact-details">
+        <div class="contact-detail"><div class="contact-icon">&#128205;</div><div><strong>Office</strong><span>48 N Macdonald, Mesa, AZ 85201</span></div></div>
+        <div class="contact-detail"><div class="contact-icon">&#128222;</div><div><strong>Phone</strong><span><a href="tel:4800000000">(480) 000-0000</a></span></div></div>
+        <div class="contact-detail"><div class="contact-icon">&#9993;&#65039;</div><div><strong>Email</strong><span><a href="mailto:info@mesaestateplan.com">info@mesaestateplan.com</a></span></div></div>
+        <div class="contact-detail"><div class="contact-icon">&#128336;</div><div><strong>Hours</strong><span>Mon–Fri, 8am–5pm &middot; Virtual available</span></div></div>
+      </div>
+    </div>
+    <div class="contact-form-wrap reveal">
+      <h3>Book a Free Consultation</h3>
+      <p>Tell us a bit about yourself and we'll be in touch within one business day.</p>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="McKay"></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Tucker"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Email</label><input type="email" placeholder="you@email.com"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="(480) 000-0000"></div>
+      </div>
+      <div class="form-group"><label>I am a...</label><select><option value="">Select...</option><option>Individual / Family</option><option>Business Owner</option><option>Financial Planner / RIA</option><option>CPA / Tax Professional</option><option>Insurance Agent</option><option>Attorney (referral)</option></select></div>
+      <div class="form-group"><label>Service Interested In</label><select><option value="">Select a service...</option><option>Wills &amp; Trusts</option><option>Powers of Attorney</option><option>Business Succession Planning</option><option>Asset Protection</option><option>Estate Tax Planning</option><option>Not sure yet — I need guidance</option></select></div>
+      <div class="form-group"><label>Tell us about your situation (optional)</label><textarea placeholder="e.g. Married with two kids, own a home and small business, need a trust..."></textarea></div>
+      <button class="form-submit">Request Free Consultation</button>
+      <p class="form-disclaimer">By submitting this form, you are not creating an attorney-client relationship. All consultations are confidential.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Video Lightbox Modal -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-inner">
+    <button class="video-modal-close" id="videoClose">&times;</button>
+    <div class="video-modal-placeholder">
+      Video embed goes here<br>
+      <span style="opacity:0.5;">Replace this div with a YouTube/Vimeo iframe<br>or HTML5 video element</span>
+    </div>
+  </div>
+</div>
+
+<script>
+// Tab switching
+function switchTab(id) {
+  document.querySelectorAll('.svc-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.svc-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// FAQ toggle
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// Segments scroll: dot tracking + hint fade
+const segScroll = document.getElementById('segmentsScroll');
+const segDots = document.querySelectorAll('#segmentDots .scroll-dot');
+const scrollHint = document.querySelector('.scroll-hint');
+let hintHidden = false;
+
+if (segScroll) {
+  segScroll.addEventListener('scroll', () => {
+    if (!hintHidden && segScroll.scrollLeft > 20) {
+      scrollHint.style.transition = 'opacity 0.4s';
+      scrollHint.style.opacity = '0';
+      setTimeout(() => { scrollHint.style.display = 'none'; }, 400);
+      hintHidden = true;
+    }
+    const cards = segScroll.querySelectorAll('.segment-card');
+    const scrollCenter = segScroll.scrollLeft + segScroll.clientWidth / 2;
+    let activeIdx = 0;
+    cards.forEach((card, i) => {
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      if (Math.abs(cardCenter - scrollCenter) < card.offsetWidth / 2) activeIdx = i;
+    });
+    segDots.forEach((dot, i) => dot.classList.toggle('active', i === activeIdx));
+  }, { passive: true });
+}
+
+// Resource filter buttons
+const filterBtns = document.querySelectorAll('#resourceFilters .filter-btn');
+const resourceCards = document.querySelectorAll('#resourceCards .resource-card');
+const seeMoreCard = document.getElementById('resourceSeeMore');
+const MAX_VISIBLE = 3;
+
+function applyResourceFilter(filter) {
+  const matching = [];
+  const hidden = [];
+  resourceCards.forEach(card => {
+    const category = card.dataset.category;
+    const matches = filter === 'all' || category === filter;
+    if (matches) matching.push(card);
+    else hidden.push(card);
+  });
+  hidden.forEach(card => {
+    card.classList.remove('filter-visible');
+    card.classList.add('filter-hidden', 'overflow-hidden');
+    card.style.display = 'none';
+  });
+  matching.forEach((card, i) => {
+    if (i < MAX_VISIBLE) {
+      card.classList.remove('filter-hidden', 'overflow-hidden');
+      card.classList.add('filter-visible');
+      card.style.display = '';
+    } else {
+      card.classList.remove('filter-visible');
+      card.classList.add('overflow-hidden');
+      card.style.display = 'none';
+    }
+  });
+  if (seeMoreCard) seeMoreCard.style.display = '';
+}
+
+if (filterBtns.length) {
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyResourceFilter(filter);
+    });
+  });
+  applyResourceFilter('all');
+}
+
+// Video lightbox
+const videoTrigger = document.getElementById('videoTrigger');
+const videoModal = document.getElementById('videoModal');
+const videoClose = document.getElementById('videoClose');
+if (videoTrigger && videoModal) {
+  videoTrigger.addEventListener('click', () => {
+    videoModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  videoClose.addEventListener('click', () => {
+    videoModal.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+  videoModal.addEventListener('click', (e) => {
+    if (e.target === videoModal) {
+      videoModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && videoModal.classList.contains('open')) {
+      videoModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+}
+</script>
+
 </BaseLayout>
