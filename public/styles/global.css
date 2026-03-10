@@ -1344,3 +1344,8 @@ a, button { -webkit-tap-highlight-color: rgba(0,0,0,0.04); }
 .breadcrumb a, .breadcrumb-sep, .breadcrumb-current { font-size:0.58rem; }
 .breadcrumb[aria-label="Breadcrumb"] { justify-content:flex-start; text-align:left; }
 .breadcrumb a, .breadcrumb-sep, .breadcrumb-current { font-size:0.58rem; }
+.service-breadcrumb { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
+.service-breadcrumb a { font-size:0.58rem; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.4); text-decoration:none; transition:color 0.2s; }
+.service-breadcrumb a:hover { color:rgba(255,255,255,0.7); }
+.bc-sep { color:rgba(255,255,255,0.2); font-size:0.54rem; }
+.bc-current { font-size:0.58rem; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.7); font-weight:500; }

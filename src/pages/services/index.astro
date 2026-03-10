@@ -1,62 +1,66 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const trustsServices = [
-  { title: 'Wills & Trusts', desc: 'Revocable living trusts, irrevocable trusts, and pour-over wills designed to avoid probate and protect beneficiaries.', href: '/services/wills-and-trusts', icon: String.fromCodePoint(0x1F4DC) },
-  { title: 'Powers of Attorney', desc: 'Durable financial POA and healthcare directives that ensure your wishes are honored if incapacitated.', href: '/services/financial-power-of-attorney', icon: String.fromCodePoint(0x270D, 0xFE0F) },
-  { title: 'Healthcare Directive', desc: 'Name a healthcare agent and record your wishes about medical treatment.', href: '/services/healthcare-directive', icon: String.fromCodePoint(0x1F3E5) },
-  { title: 'Asset Protection', desc: 'LLCs, domestic asset protection trusts, and strategic titling to shield your wealth from creditors.', href: '/services/asset-protection', icon: String.fromCodePoint(0x1F6E1, 0xFE0F) },
-  { title: 'Estate Tax Planning', desc: 'Gifting strategies, dynasty trusts, and estate tax minimization for significant assets.', href: '/services/estate-tax-planning', icon: String.fromCodePoint(0x1F4CA) },
-  { title: 'Charitable Planning', desc: 'Charitable remainder trusts, donor-advised funds, and philanthropic strategies for family and community.', href: '/services/charitable-planning', icon: String.fromCodePoint(0x1F91D) },
+  { title: 'Wills & Trusts', desc: 'Revocable living trusts, irrevocable trusts, and pour-over wills designed to avoid probate and protect beneficiaries.', href: '/services/wills-and-trusts', icon: '📜' },
+  { title: 'Powers of Attorney', desc: 'Durable financial POA and healthcare directives that ensure your wishes are honored if incapacitated.', href: '/services/financial-power-of-attorney', icon: '✍️' },
+  { title: 'Healthcare Directive', desc: 'Name a healthcare agent and record your wishes about medical treatment.', href: '/services/healthcare-directive', icon: '🏥' },
+  { title: 'Asset Protection', desc: 'LLCs, domestic asset protection trusts, and strategic titling to shield your wealth from creditors.', href: '/services/asset-protection', icon: '🛡️' },
+  { title: 'Estate Tax Planning', desc: 'Gifting strategies, dynasty trusts, and estate tax minimization for significant assets.', href: '/services/estate-tax-planning', icon: '📊' },
+  { title: 'Charitable Planning', desc: 'Charitable remainder trusts, donor-advised funds, and philanthropic strategies for family and community.', href: '/services/charitable-planning', icon: '🤝' },
 ];
 const businessServices = [
-  { title: 'Business Succession', desc: 'Buy-sell agreements and succession plans for smooth business transitions.', href: '/services/business-succession-planning', icon: String.fromCodePoint(0x1F3E2) },
-  { title: 'Business Formation', desc: 'LLC formation, S-corp elections, and entity structuring that protects personal assets.', href: '/services/business-formation', icon: String.fromCodePoint(0x2696, 0xFE0F) },
-  { title: 'Commercial Lease Review', desc: 'Thorough review of terms, exclusives, and exit provisions in lease negotiations.', href: '/services/commercial-lease-review', icon: String.fromCodePoint(0x1F4CB) },
+  { title: 'Business Succession', desc: 'Buy-sell agreements and succession plans for smooth business transitions.', href: '/services/business-succession-planning', icon: '🏢' },
+  { title: 'Business Formation', desc: 'LLC formation, S-corp elections, and entity structuring that protects personal assets.', href: '/services/business-formation', icon: '⚖️' },
+  { title: 'Commercial Lease Review', desc: 'Thorough review of terms, exclusives, and exit provisions in lease negotiations.', href: '/services/commercial-lease-review', icon: '📋' },
 ];
 ---
-<BaseLayout title=\"Estate Planning Services | Mesa, AZ | Mesa Estate Planning\" description=\"Comprehensive estate planning services for Arizona families and business owners.\" keywords=\"estate planning services mesa az\">
-  <section class=\"services-index-hero\">
-    <div class=\"services-index-hero-content\">
-      <div class=\"hero-eyebrow\" style=\"opacity:1;animation:none;\">Our Services</div>
-      <h1 class=\"hero-h1\" style=\"opacity:1;animation:none;\">The right plan for <em>your</em> situation</h1>
-      <p class=\"hero-body\" style=\"opacity:1;animation:none;\">Every family and business is different. We help you understand exactly which documents you need, why you need them, and what they do for you.</p>
-      <div class=\"hero-btns\" style=\"opacity:1;animation:none;\">
-        <a href=\"#contact\" class=\"btn-bronze\">Book Free Consultation</a>
-        <a href=\"tel:4800000000\" class=\"btn-ghost-w\">Call (480) 000-0000</a>
+<BaseLayout
+  title="Estate Planning Services | Mesa, AZ | Mesa Estate Planning"
+  description="Comprehensive estate planning services for Arizona families and business owners. Wills, trusts, asset protection, business succession, tax planning, and more."
+  keywords="estate planning services mesa az, wills trusts arizona, asset protection, business succession planning"
+>
+  <section class="services-index-hero">
+    <div class="services-index-hero-content">
+      <div class="hero-eyebrow" style="opacity:1;animation:none;">Our Services</div>
+      <h1 class="hero-h1" style="opacity:1;animation:none;">The right plan for <em>your</em> situation</h1>
+      <p class="hero-body" style="opacity:1;animation:none;">Every family and business is different. We help you understand exactly which documents you need, why you need them, and what they do for you.</p>
+      <div class="hero-btns" style="opacity:1;animation:none;">
+        <a href="#contact" class="btn-bronze">Book Free Consultation</a>
+        <a href="tel:4800000000" class="btn-ghost-w">Call (480) 000-0000</a>
       </div>
     </div>
   </section>
-  <section class=\"services-index-grid\">
-    <div class=\"services-index-section\">
-      <div class=\"services-index-label\">Trusts and Estates</div>
-      <div class=\"services-card-grid\">
+  <section class="services-index-grid">
+    <div class="services-index-section">
+      <div class="services-index-label">Trusts and Estates</div>
+      <div class="services-card-grid">
         {trustsServices.map(svc => (
-          <a href={svc.href} class=\"services-index-card\">
-            <div class=\"services-card-icon\">{svc.icon}</div>
+          <a href={svc.href} class="services-index-card">
+            <div class="services-card-icon">{svc.icon}</div>
             <h3>{svc.title}</h3>
             <p>{svc.desc}</p>
-            <span class=\"services-card-link\">Learn more &rarr;</span>
+            <span class="services-card-link">Learn more &rarr;</span>
           </a>
         ))}
       </div>
     </div>
-    <div class=\"services-index-section\">
-      <div class=\"services-index-label\">Business and Tax</div>
-      <div class=\"services-card-grid\">
+    <div class="services-index-section">
+      <div class="services-index-label">Business and Tax</div>
+      <div class="services-card-grid">
         {businessServices.map(svc => (
-          <a href={svc.href} class=\"services-index-card\">
-            <div class=\"services-card-icon\">{svc.icon}</div>
+          <a href={svc.href} class="services-index-card">
+            <div class="services-card-icon">{svc.icon}</div>
             <h3>{svc.title}</h3>
             <p>{svc.desc}</p>
-            <span class=\"services-card-link\">Learn more &rarr;</span>
+            <span class="services-card-link">Learn more &rarr;</span>
           </a>
         ))}
       </div>
     </div>
-    <div class=\"services-index-cta\">
+    <div class="services-index-cta">
       <h2>Not sure what you need?</h2>
       <p>Most clients don't know exactly which documents they need before their first meeting. Start with a free consultation and we will walk you through it.</p>
-      <a href=\"#contact\" class=\"btn-bronze\">Book Free Consultation</a>
+      <a href="#contact" class="btn-bronze">Book Free Consultation</a>
     </div>
   </section>
   <style>
