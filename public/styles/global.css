@@ -748,7 +748,7 @@ nav {
 .faq-icon { color: var(--bronze); font-size: 1.1rem; flex-shrink: 0; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
 .faq-item.open .faq-icon { transform: rotate(45deg); }
 .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-.faq-item.open .faq-answer { max-height: 300px; }
+.faq-item.open .faq-answer { max-height: 800px; }
 .faq-answer p { font-size: 0.84rem; color: var(--mid-gray); line-height: 1.78; font-weight: 300; padding-bottom: 18px; }
 
 /* ═══════════════════════════════════
