@@ -51,7 +51,7 @@ mesa-estate-planning/
 
 ### Step 3: Connect Your Domain
 1. In Vercel dashboard → Settings → Domains
-2. Add `mesaestateplan.com` and `www.mesaestateplan.com`
+2. Add `mesaestateplanninglawyers.com` and `www.mesaestateplanninglawyers.com`
 3. Vercel gives you DNS records to add at your domain registrar
 4. SSL certificate is automatic
 
@@ -83,7 +83,7 @@ Create a file in `src/pages/services/` — see `wills-and-trusts.astro` for the 
 Create a file in `src/pages/locations/` — see `chandler.astro` for the pattern.
 
 ### New PDF Download
-Drop the PDF in `public/downloads/`. It's instantly available at `mesaestateplan.com/downloads/filename.pdf`.
+Drop the PDF in `public/downloads/`. It's instantly available at `mesaestateplanninglawyers.com/downloads/filename.pdf`.
 
 ## For Clara (AI Agent)
 Clara can manage this site by:

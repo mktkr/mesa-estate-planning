@@ -1,0 +1,105 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+---
+
+<ServiceLayout
+  title="Jay Allen, Esq. | Of Counsel | Mesa Estate Planning"
+  description="Jay Allen, Esq. is an Of Counsel attorney at Mesa Estate Planning with nearly three decades of Arizona estate planning and business law experience. Born and raised in Mesa, Arizona."
+  heroTitle="Jay Allen, Esq."
+  heroSubtitle="Nearly three decades of Arizona estate planning experience, still based in the community he has served his entire career."
+>
+  <div class="content-section">
+    <h2>Bio</h2>
+    <p>Jay Allen has practiced law in Mesa, Arizona for nearly three decades. He was born and raised here, built his career here, and still lives here with his wife Lori and their family. That kind of continuity in a place, in a practice, in a community is increasingly rare in the legal profession, and it shows in how Jay works.</p>
+
+<p>Over a career spanning nearly thirty years of Arizona estate planning and business law, Jay has represented families and business owners across the full range of complexity the practice involves. Wills, trusts, family limited partnerships, business formations, real estate transactions, contract work, and probate administration. He has handled all of it, for clients at every level, over a career long enough that he was practicing when many of the rules governing Arizona estate planning today were still new.</p>
+
+<p>Jay brings that depth to Mesa Estate Planning as Of Counsel. Clients benefit from his judgment on complex matters, his familiarity with how Arizona estate planning practice has evolved over nearly thirty years, and the kind of perspective that only comes from sitting across the table from families navigating genuinely difficult decisions for a very long time.</p>
+
+  </div>
+
+  <div class="content-section">
+    <h2>What Jay Focuses On</h2>
+    <p>Jay's practice spans estate planning and business law across several areas. He works on wills and trust preparation, family limited partnerships and similar planning vehicles, business entity formation and transaction counseling, business succession planning including the sale of businesses, real estate transactions and leasing, contract review and drafting, and probate and trust administration.</p>
+
+<p>That breadth is intentional. The clients Jay has served longest tend to come back across multiple areas of their lives. The estate plan drafted a decade ago. The business transaction last year. The probate administration now. Knowing the full picture of a client's situation makes the advice better at every stage.</p>
+
+  </div>
+
+  <div class="content-section">
+    <h2>Credentials</h2>
+    <p>Jay graduated Order of the Coif from the J. Reuben Clark Law School at Brigham Young University in 1991, a distinction reserved for the top ten percent of the graduating class. He served as Articles Editor on the BYU Law Review. Before law school, he earned a Bachelor of Science in Accounting from Arizona State University, graduating Magna Cum Laude in 1986.</p>
+
+<p>Those credentials matter less than the nearly three decades of practice that followed them. But they reflect the standard Jay has held himself to throughout his career.</p>
+
+  </div>
+
+  <div class="content-section">
+    <h2>Background</h2>
+    <strong>Education</strong>
+J. Reuben Clark Law School, Brigham Young University, J.D., 1991, Order of the Coif
+BYU Law Review, Articles Editor
+Arizona State University, B.S. Accounting, Magna Cum Laude, 1986
+
+<strong>Based in</strong>
+Mesa, Arizona. Born, raised, and still here.
+
+  </div>
+
+  <div class="content-section">
+    <h2>A Note on Working With Jay and McKay Together</h2>
+    <p>Jay serves Mesa Estate Planning as Of Counsel, which means clients have access to his judgment and experience on matters that benefit from it without the overhead of a large firm. McKay handles the day-to-day client relationship, the drafting, and the planning work. Jay's role is to bring his nearly three decades of Arizona practice to bear on the situations that call for it. The combination gives this boutique firm a depth of experience that most practices its size cannot offer.</p>
+
+  </div>
+
+  <div class="content-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-section">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          What does Of Counsel mean at Mesa Estate Planning?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Of Counsel is a formal designation for an attorney who is affiliated with a firm but not a partner or associate. Jay Allen serves Mesa Estate Planning in an advisory and collaborative capacity, bringing nearly three decades of Arizona estate planning and business law experience to the firm's work. Clients benefit from his depth of experience without the cost structure of a large firm.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Has Jay Allen worked with clients in complex estate planning situations?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Over nearly three decades of Arizona practice, Jay has represented families and business owners across the full range of estate planning and business law complexity. From straightforward wills and trusts to multi-generational family business succession, real estate portfolios, and probate administration for substantial estates, his experience covers the full spectrum.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Does Jay Allen handle probate and trust administration?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Probate and trust administration has been a consistent part of Jay's practice throughout his career. When a client's loved one passes and the estate needs to be administered, whether through probate court or trust administration, Jay's experience in that process is directly available to Mesa Estate Planning clients.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          What areas of law does Jay Allen practice?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Jay's practice covers estate planning including wills, trusts, and family limited partnerships, business entity formation and transaction counseling, business succession planning, real estate transactions and leasing, contract review and drafting, and probate and trust administration.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+  </script>
+</ServiceLayout>
