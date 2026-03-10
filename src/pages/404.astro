@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found | Mesa Estate Planning"
+  description="The page you are looking for does not exist."
+  noindex={true}
+>
+  <section class="error-page">
+    <div class="error-content">
+      <div class="error-number">404</div>
+      <h1 class="error-title">This page does not exist.</h1>
+      <p class="error-body">The page you are looking for may have been moved, removed, or the URL might be incorrect.</p>
+      <div class="error-actions">
+        <a href="/" class="btn-bronze">Back to Homepage</a>
+        <a href="/contact" class="error-link">Or book a free consultation</a>
+      </div>
+      <div class="error-helpful">
+        <p class="error-helpful-label">Looking for one of these?</p>
+        <div class="error-links">
+          <a href="/services/wills-and-trusts">Wills and Trusts</a>
+          <a href="/services/asset-protection">Asset Protection</a>
+          <a href="/services/business-succession-planning">Business Succession</a>
+          <a href="/services/estate-tax-planning">Estate Tax Planning</a>
+          <a href="/who-we-serve/families">For Families</a>
+          <a href="/who-we-serve/business-owners">For Business Owners</a>
+          <a href="/about/mckay-tucker">About McKay Tucker</a>
+          <a href="/our-process">Our Process</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    .error-page { min-height:70vh; display:flex; align-items:center; justify-content:center; padding:calc(56px + 48px) 20px 80px; background:var(--cream); text-align:center; }
+    .error-content { max-width:520px; }
+    .error-number { font-family:var(--serif); font-size:clamp(4rem,15vw,8rem); font-weight:300; color:var(--sand); line-height:1; margin-bottom:8px; }
+    .error-title { font-family:var(--serif); font-size:clamp(1.6rem,4vw,2.2rem); font-weight:300; color:var(--charcoal); line-height:1.2; margin-bottom:12px; }
+    .error-body { font-size:0.9rem; color:var(--mid-gray); font-weight:300; line-height:1.76; margin-bottom:28px; }
+    .error-actions { display:flex; flex-direction:column; align-items:center; gap:12px; margin-bottom:40px; }
+    .error-link { font-size:0.72rem; letter-spacing:0.08em; color:var(--sage); text-decoration:none; border-bottom:1px solid var(--sage); padding-bottom:2px; }
+    .error-helpful { border-top:1px solid var(--sand); padding-top:28px; }
+    .error-helpful-label { font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--bronze); font-weight:500; margin-bottom:14px; }
+    .error-links { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; }
+    .error-links a { display:inline-block; padding:7px 14px; font-size:0.76rem; color:var(--charcoal); background:white; border:1px solid var(--sand); border-radius:3px; text-decoration:none; font-weight:300; transition:border-color 0.2s,color 0.2s; }
+    .error-links a:hover { border-color:var(--sage); color:var(--sage); }
+    @media(min-width:768px) { .error-actions{flex-direction:row;justify-content:center;} .error-page{padding-top:calc(68px + 60px);} }
+  </style>
+</BaseLayout>
