@@ -154,6 +154,48 @@ nav {
   letter-spacing: 0.04em;
 }
 
+/* ── Drawer Accordion ── */
+.drawer-accordion {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%; padding: 20px var(--page-px) 8px;
+  background: none; border: none; cursor: pointer;
+  font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35); font-family: var(--sans);
+  border-bottom: none;
+}
+.drawer-accordion-icon {
+  font-size: 0.85rem; font-weight: 300; color: rgba(255,255,255,0.3);
+  transition: transform 0.3s ease;
+}
+.drawer-accordion.open .drawer-accordion-icon {
+  transform: rotate(45deg);
+}
+.drawer-accordion-panel {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.drawer-accordion-panel.open {
+  max-height: 700px;
+}
+.drawer-sub-label {
+  font-size: 0.5rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(255,255,255,0.22); padding: 14px var(--page-px) 4px;
+  font-weight: 500;
+}
+.drawer-sub-link {
+  display: block; padding: 11px var(--page-px) 11px calc(var(--page-px) + 12px);
+  color: rgba(255,255,255,0.75); text-decoration: none;
+  font-size: 0.85rem; font-weight: 300; letter-spacing: 0.01em;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: background 0.15s, color 0.15s;
+}
+.drawer-sub-link:active { background: rgba(255,255,255,0.06); color: white; }
+.drawer-view-all {
+  color: var(--taupe); font-weight: 400; font-size: 0.8rem;
+  padding-top: 14px; padding-bottom: 14px;
+  border-bottom: none;
+}
+
 /* ── Desktop Mega Menus ── */
 .mega-menu {
   position: absolute; top: calc(100% + 1px); left: 50%; transform: translateX(-50%);
@@ -1330,7 +1372,7 @@ a, button { -webkit-tap-highlight-color: rgba(0,0,0,0.04); }
   .service-hero { padding-top: calc(68px + 64px); padding-bottom: 56px; }
 }
 @media (min-width: 1080px) {
-  .service-hero { padding-top: calc(68px + 100px); padding-bottom: 72px; }
+  .service-hero { padding-top: calc(68px + 80px); padding-bottom: 72px; }
   .service-hero-content { max-width: 720px; }
 }
 .service-hero .hero-h1 { font-size: clamp(1.8rem, 5.5vw, 2.6rem); line-height: 1.14; opacity: 1; animation: none; }
